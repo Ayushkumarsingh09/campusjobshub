@@ -2,10 +2,10 @@
 
 > India's campus jobs, internships & placement platform
 
-[![Live Demo](https://img.shields.io/badge/Live-Demo-0ea5e9?style=for-the-badge)](https://campusjobshub.com)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Vercel-0ea5e9?style=for-the-badge)](https://campusjobshub.vercel.app)
 [![GitHub](https://img.shields.io/badge/GitHub-campusjobshub-181717?style=for-the-badge&logo=github)](https://github.com/Ayushkumarsingh09/campusjobshub)
 
-**Live website:** [https://campusjobshub.com](https://campusjobshub.com)
+**Live demo:** [https://campusjobshub.vercel.app](https://campusjobshub.vercel.app)
 
 Full-stack campus recruitment platform covering jobs, internships, placement prep, and resume AI for Indian students.
 
@@ -14,8 +14,6 @@ Full-stack campus recruitment platform covering jobs, internships, placement pre
 ### Homepage
 
 ![CampusJobsHub homepage](docs/screenshots/homepage.png)
-
-Live preview: [https://campusjobshub.com](https://campusjobshub.com)
 
 ## Highlights
 
@@ -31,22 +29,15 @@ Live preview: [https://campusjobshub.com](https://campusjobshub.com)
 |-------|------------|
 | Core | Next.js 15, Express, Prisma, Supabase, Cloudinary |
 | Author | Ayush |
-| Homepage | https://campusjobshub.com |
+| Live demo | https://campusjobshub.vercel.app |
 
 ## Quick Start
 
 ```bash
-# Clone
 git clone https://github.com/Ayushkumarsingh09/campusjobshub.git
 cd campusjobshub
-
-# Install (Node projects)
 npm install
-
-# Develop
 npm run dev
-
-# Production build
 npm run build
 ```
 
@@ -61,10 +52,10 @@ README.md
 
 ## Deployment
 
-1. Configure environment values from `.env.example` when present
-2. Build or upload according to the stack above
-3. Point DNS to your host
-4. Verify production at https://campusjobshub.com
+Demo hosting: **Vercel**
+
+- Live demo: https://campusjobshub.vercel.app
+- Source: https://github.com/Ayushkumarsingh09/campusjobshub
 
 ## Author
 
