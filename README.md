@@ -1,81 +1,75 @@
 # CampusJobsHub
 
-India's campus jobs, internships & placement platform
+> India's campus jobs, internships & placement platform
 
-**Live:** [https://campusjobshub.com](https://campusjobshub.com)  
-**Repository:** https://github.com/Ayushkumarsingh09/campusjobshub
+[![Live Demo](https://img.shields.io/badge/Live-Demo-0ea5e9?style=for-the-badge)](https://campusjobshub.com)
+[![GitHub](https://img.shields.io/badge/GitHub-campusjobshub-181717?style=for-the-badge&logo=github)](https://github.com/Ayushkumarsingh09/campusjobshub)
+
+**Live website:** [https://campusjobshub.com](https://campusjobshub.com)
 
 Full-stack campus recruitment platform covering jobs, internships, placement prep, and resume AI for Indian students.
-
 
 ## Screenshots
 
 ### Homepage
 
-![CampusJobsHub screenshot](docs/screenshots/homepage.png)
+![CampusJobsHub homepage](docs/screenshots/homepage.png)
 
-> Captured from the live project UI.
+Live preview: [https://campusjobshub.com](https://campusjobshub.com)
 
-## Features
+## Highlights
 
-- Rich educational / editorial content collection
-- SEO foundations: metadata, sitemap/robots, and share cards
-- Production-ready configuration for static or Node hosting
-- Live deployment target: [campusjobshub.com](https://campusjobshub.com)
+- Campus jobs, internships, and placement preparation for Indian students
+- Resume AI and career tooling layered on a modern recruitment UX
+- Next.js frontend + Express API + Prisma/Supabase data layer
+- Cloudinary media pipeline and GA4 analytics hooks
+- Production architecture docs for Hostinger + Render deployment
 
 ## Tech Stack
 
-- Next.js 15
-- Express
-- Prisma
-- Supabase
-- Cloudinary
+| Layer | Technology |
+|-------|------------|
+| Core | Next.js 15, Express, Prisma, Supabase, Cloudinary |
+| Author | Ayush |
+| Homepage | https://campusjobshub.com |
 
 ## Quick Start
 
 ```bash
-# Install dependencies (if package.json is present)
+# Clone
+git clone https://github.com/Ayushkumarsingh09/campusjobshub.git
+cd campusjobshub
+
+# Install (Node projects)
 npm install
 
-# Start local development
+# Develop
 npm run dev
+
+# Production build
+npm run build
 ```
 
-> Some projects are PHP/WordPress packages — follow their deployment docs in `docs/` or `DEPLOY*.md` instead of `npm run dev`.
+For WordPress/PHP packages, skip `npm` and follow the deployment docs in `docs/` / `DEPLOY*.md`.
 
-## Scripts
-
-| Command | Description |
-|---------|-------------|
-| `npm run dev` | Local development server |
-| `npm run build` | Production build |
-| `npm run lint` | Lint source (when configured) |
-
-## Project Structure
+## Repository Layout
 
 ```text
-.
-├── src/ or app source        # Application code
-├── public/ or assets/        # Static assets
-├── docs/                     # Deployment & operations notes
-├── scripts/                  # Maintenance / content generators
-└── README.md                 # You are here
+frontend/, backend/, database/, docker/, docs/
+README.md
 ```
 
 ## Deployment
 
-This project is prepared for production hosting (Hostinger / Vercel / static export / PHP hosting depending on stack).
-
-1. Configure environment variables from `.env.example` (when present)
-2. Build or upload according to the project stack
-3. Point the domain to the hosting target
-4. Verify the live URL: https://campusjobshub.com
+1. Configure environment values from `.env.example` when present
+2. Build or upload according to the stack above
+3. Point DNS to your host
+4. Verify production at https://campusjobshub.com
 
 ## Author
 
-**Ayush**  
-GitHub: [Ayushkumarsingh09](https://github.com/Ayushkumarsingh09)
+Built and maintained by **Ayush** ([@Ayushkumarsingh09](https://github.com/Ayushkumarsingh09)).
 
 ## License
 
-All rights reserved © CampusJobsHub. Source is published for portfolio and deployment use unless otherwise noted.
+All rights reserved © CampusJobsHub. Published for portfolio and deployment use.
