@@ -1,0 +1,38 @@
+{
+  "name": "campusjobshub",
+  "version": "1.0.0",
+  "private": true,
+  "description": "CampusJobsHub — India's campus jobs, internships & placement platform",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "start:local": "powershell -ExecutionPolicy Bypass -File scripts/start-local.ps1",
+    "dev:frontend": "npm run dev --workspace=frontend",
+    "dev:backend": "npm run dev --workspace=backend",
+    "build": "npm run build --workspace=backend && npm run build --workspace=frontend",
+    "build:frontend": "npm run build --workspace=frontend",
+    "build:backend": "npm run build --workspace=backend",
+    "lint": "npm run lint --workspaces --if-present",
+    "db:generate": "npm run db:generate --workspace=backend",
+    "db:migrate": "npm run db:migrate --workspace=backend",
+    "db:push": "npm run db:push --workspace=backend",
+    "db:seed": "npm run db:seed --workspace=backend",
+    "smoke-test": "node scripts/smoke-test.mjs",
+    "smoke-test:auth": "node scripts/auth-smoke-test.mjs",
+    "logos:generate": "node scripts/generate-company-logos.mjs",
+    "audit:links": "node scripts/link-audit.mjs",
+    "audit:prelaunch": "node scripts/pre-launch-audit.mjs",
+    "audit:production": "npm run build && node scripts/smoke-test.mjs && node scripts/auth-smoke-test.mjs && node scripts/pre-launch-audit.mjs && node scripts/link-audit.mjs",
+    "build:production": "npm run logos:generate && npm run build:static --workspace=frontend"
+  },
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "simple-icons": "^16.23.0"
+  },
+  "dependencies": {
+    "@swc/helpers": "^0.5.23"
+  }
+}
