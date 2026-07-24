@@ -1,0 +1,9 @@
+{
+  "score": 100,
+  "checks": 473,
+  "issues": [],
+  "warnings": [
+    "Career URL returned 404: https://www.techmahindra.com/en-in/careers/"
+  ],
+  "at": "2026-06-07T08:07:48.736Z"
+}
