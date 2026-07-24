@@ -1,0 +1,49 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Legacy SEO paths → canonical prepare routes
+  RewriteRule ^roadmaps/?$ /prepare/roadmaps/ [R=301,L]
+  RewriteRule ^roadmaps/([^/]+)/?$ /prepare/roadmaps/$1/ [R=301,L]
+  RewriteRule ^interview-questions/?$ /prepare/interview-questions/ [R=301,L]
+
+  # Legacy wrong roadmap slugs → canonical seed slugs
+  RewriteRule ^prepare/roadmaps/dsa-placement-prep/?$ /prepare/roadmaps/dsa-placement-roadmap/ [R=301,L]
+  RewriteRule ^prepare/roadmaps/full-stack-web-development/?$ /prepare/roadmaps/full-stack-developer-roadmap/ [R=301,L]
+  RewriteRule ^prepare/roadmaps/data-science-fundamentals/?$ /prepare/roadmaps/data-science-roadmap/ [R=301,L]
+
+  # Admin CMS edit shells (static export uses placeholder id "_")
+  RewriteRule ^admin/jobs/[^/]+/edit/?$ /admin/jobs/_/edit/ [L]
+  RewriteRule ^admin/blog/[^/]+/edit/?$ /admin/blog/_/edit/ [L]
+  RewriteRule ^admin/companies/[^/]+/edit/?$ /admin/companies/_/edit/ [L]
+  RewriteRule ^admin/internships/[^/]+/edit/?$ /admin/internships/_/edit/ [L]
+  RewriteRule ^admin/roadmaps/[^/]+/edit/?$ /admin/roadmaps/_/edit/ [L]
+  RewriteRule ^admin/interview-questions/[^/]+/edit/?$ /admin/interview-questions/_/edit/ [L]
+
+  # Serve existing files and directories as-is
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # Next.js static export: /path/ → /path/index.html
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI}index.html -f
+  RewriteRule ^(.+?)/?$ $1/index.html [L]
+
+  # Missing pages → 404 (NOT homepage)
+  RewriteRule ^ 404.html [L]
+</IfModule>
+
+DirectoryIndex index.html
+
+# Cache static assets
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+</IfModule>
